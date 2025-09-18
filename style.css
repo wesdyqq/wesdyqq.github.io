@@ -6,15 +6,16 @@
 
 body {
   background-color: #000;
-  overflow: hidden;
   font-family: 'Courier New', monospace;
   color: white;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* оставляем — ты хотел без скролла */
 }
 
+/* ✅ Фон — оставляем как есть, он работает */
 .bg-gif {
   position: fixed;
   top: 0;
@@ -35,49 +36,64 @@ body {
   100% { opacity: 0.8; }
 }
 
+/* ✅ Внешний контейнер — стеклянный эффект */
 .container {
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(20px);
-  border-radius: 32px;
-  padding: 48px;
-  background-color: rgba(255, 255, 255, 0.03);
-  max-width: 360px;
-  box-shadow: 0 0 60px rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 24px; /* УМЕНЬШИЛИ — чтобы не было "вытянутости" */
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease;
+  max-width: 320px; /* УМЕНЬШИЛИ */
+  width: 90%;
 }
 
 .container:hover {
   transform: translateY(-4px);
 }
 
+/* ✅ Внутренний контейнер — белый фон для читаемости текста */
+.containersmall {
+  background-color: rgba(0, 0, 0, 0.6); /* ЧЁРНЫЙ полупрозрачный — лучше смотрится на фоне */
+  padding-left:  40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  
+}
+
 .avatar {
-  width: 96px;
-  height: 96px;
+  width: 80px; /* чуть меньше */
+  height: 80px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 24px;
+  margin: 0 auto 20px; /* центрируем + уменьшили отступ */
+  display: block;
   object-fit: cover;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
 }
 
 h1 {
-  font-size: 2.4rem;
-  letter-spacing: 3px;
-  margin-bottom: 28px;
-  font-weight: 700;
-  color: #d4d4d4;
-  -webkit-text-stroke-width: 0.03em;
-  -webkit-text-stroke-color: #000;
-  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.8rem; /* уменьшили */
+  text-align: center;
+  letter-spacing: 2px; /* чуть меньше */
+  margin: 0 0 20px; /* уменьшили отступ */
+  font-weight: 900;
+  color: #fff;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000;
+  line-height: 1.2; /* чтобы не "вылезало" */
 }
 
 .links {
-  font-size: 1.3rem;
-  line-height: 1.4;
-  font-weight: 300;
-  color: #0099ff;
-  
+  font-size: 1rem; /* уменьшили */
+  line-height: 1.5;
 }
 
 .links a {
@@ -88,8 +104,7 @@ h1 {
   transition: all 0.3s ease;
   padding: 8px 0;
   position: relative;
-  -webkit-text-stroke-width: 0.03em;
-  -webkit-text-stroke-color: #000000;
+  text-align: center;
 }
 
 .links a::after {
@@ -105,10 +120,36 @@ h1 {
 }
 
 .links a:hover {
-  color: rgb(87, 202, 255);
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  color: rgb(104, 118, 150);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 .links a:hover::after {
   width: 60%;
+}
+
+/* 📱 Адаптивность */
+@media (max-width: 400px) {
+  .container {
+    padding: 16px;
+    max-width: 95%;
+  }
+
+  .containersmall {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .links {
+    font-size: 0.95rem;
+  }
 }
