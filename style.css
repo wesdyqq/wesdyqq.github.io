@@ -1,155 +1,153 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/Bezier.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #000;
-  font-family: 'Courier New', monospace;
-  color: white;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* оставляем — ты хотел без скролла */
+    background-color: #000;
+    font-family: 'MyCustomFont', 'Courier New', monospace;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* ✅ Фон — оставляем как есть, он работает */
 .bg-gif {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background-image: url('background.gif');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.7;
-  filter: grayscale(100%);
-  animation: pulse 4s infinite alternate;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: url('background.gif');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    filter: grayscale(100%);
+    animation: pulse 4s infinite alternate;
 }
 
 @keyframes pulse {
-  0% { opacity: 0.6; }
-  100% { opacity: 0.8; }
+    0% { opacity: 0.6; }
+    100% { opacity: 0.8; }
 }
 
-/* ✅ Внешний контейнер — стеклянный эффект */
 .container {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(16px);
-  border-radius: 24px;
-  padding: 24px; /* УМЕНЬШИЛИ — чтобы не было "вытянутости" */
-  background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease;
-  max-width: 320px; /* УМЕНЬШИЛИ */
-  width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+    max-width: 320px;
+    width: 90%;
 }
 
 .container:hover {
-  transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
-/* ✅ Внутренний контейнер — белый фон для читаемости текста */
 .containersmall {
-  background-color: rgba(0, 0, 0, 0.6); /* ЧЁРНЫЙ полупрозрачный — лучше смотрится на фоне */
-  padding-left:  40px;
-  padding-right: 40px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-radius: 16px;
-  backdrop-filter: blur(4px);
-  
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
 }
 
 .avatar {
-  width: 80px; /* чуть меньше */
-  height: 80px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  margin: 0 auto 20px; /* центрируем + уменьшили отступ */
-  display: block;
-  object-fit: cover;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto 20px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
 }
 
 h1 {
-  font-size: 1.8rem; /* уменьшили */
-  text-align: center;
-  letter-spacing: 2px; /* чуть меньше */
-  margin: 0 0 20px; /* уменьшили отступ */
-  font-weight: 900;
-  color: #fff;
-  text-shadow:
-    2px 2px 0 #000,
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000;
-  line-height: 1.2; /* чтобы не "вылезало" */
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0 0 20px;
+    font-weight: bolder;
+    color: #fff;
+    line-height: 1.2;
 }
 
 .links {
-  font-size: 1rem; /* уменьшили */
-  line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .links a {
-  display: block;
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  padding: 8px 0;
-  position: relative;
-  text-align: center;
+    display: block;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+    position: relative;
+    text-align: center;
 }
 
 .links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, #fff, transparent);
-  transition: width 0.3s ease;
-  transform: translateX(-50%);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #fff, transparent);
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
 }
 
 .links a:hover {
-  color: rgb(104, 118, 150);
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    color: rgb(104, 118, 150);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 .links a:hover::after {
-  width: 60%;
+    width: 60%;
 }
 
-/* 📱 Адаптивность */
 @media (max-width: 400px) {
-  .container {
-    padding: 16px;
-    max-width: 95%;
-  }
+    .container {
+        padding: 16px;
+        max-width: 95%;
+    }
 
-  .containersmall {
-    padding: 16px;
-  }
+    .containersmall {
+        padding: 16px;
+    }
 
-  h1 {
-    font-size: 1.6rem;
-    letter-spacing: 1px;
-  }
+    h1 {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
 
-  .avatar {
-    width: 70px;
-    height: 70px;
-  }
+    .avatar {
+        width: 70px;
+        height: 70px;
+    }
 
-  .links {
-    font-size: 0.95rem;
-  }
+    .links {
+        font-size: 0.95rem;
+    }
 }

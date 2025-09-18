@@ -1,4 +1,3 @@
-// Анимация фона — пульсация
 window.addEventListener('load', () => {
   const bg = document.querySelector('.bg-gif');
   let offset = 0;
