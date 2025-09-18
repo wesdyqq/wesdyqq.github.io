@@ -66,29 +66,30 @@ h1 {
   letter-spacing: 3px;
   margin-bottom: 28px;
   font-weight: 700;
-  text-transform: uppercase;
   color: #d4d4d4;
+  -webkit-text-stroke-width: 0.03em;
   -webkit-text-stroke-color: #000;
-  -webkit-text-stroke-width: 1px;
-  
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .links {
-  font-size: 0.9rem;
-  line-height: 2;
+  font-size: 1.3rem;
+  line-height: 1.4;
   font-weight: 300;
-  color: #bbb;
+  color: #0099ff;
   
 }
 
 .links a {
   display: block;
-  color: #ccc;
+  color: #ffffff;
+  font-weight: bold;
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 8px 0;
   position: relative;
+  -webkit-text-stroke-width: 0.03em;
+  -webkit-text-stroke-color: #000000;
 }
 
 .links a::after {
@@ -104,7 +105,7 @@ h1 {
 }
 
 .links a:hover {
-  color: white;
+  color: rgb(87, 202, 255);
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
